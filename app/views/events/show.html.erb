@@ -1,0 +1,32 @@
+<h1>Event</h1>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @event.price %>
+</p>
+
+<p>
+<% if @event.concert_hall_id? %>
+  <strong>Description:</strong>
+  <%= @event.concert_hall.name %>
+<% end %>
+</p>
+
+<p>
+<% if @event.band_id? %>
+  <strong>Rating:</strong>
+  <%= @event.band.name %>
+<% end %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+
+

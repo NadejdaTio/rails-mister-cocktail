@@ -1,29 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @band.name %>
-</p>
-
-<p>
-  <strong>Style:</strong>
-  <%= @band.style %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @band.description %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @band.rating %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @band.url %>
-</p>
-
-<%= link_to 'Edit', edit_band_path(@band) %> |
-<%= link_to 'Back', bands_path %>
+<div class="media">
+  <div class="media-body">
+    <div class="media-section">
+      <h2>Pictures</h2>
+    </div>
+    <div class="media-section">
+      <h2><%= @band.name %></h2>
+      <p>
+        <%= @band.description %>
+      </p>
+      <%= link_to 'Edit', edit_band_path(@band) %> |
+      <%= link_to 'Back', bands_path %>
+    </div>
+  </div>
+  <div class="media-aside">
+    <div class="media-section">
+      <h2>Share</h2>
+      <div class="share-links">
+        <a href="#" class="share-link bg-facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#" class="share-link bg-twitter">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#" class="share-link bg-email">
+          <i class="fa fa-envelope-o"></i>
+        </a>
+        <a href="#" class="share-link bg-text">
+          <i class="fa fa-mobile"></i>
+        </a>
+      </div>
+      <p>
+        <strong>Url:</strong>
+        <%= @band.url %>
+      </p>
+    </div>
+    <div class="media-section">
+      <h2>Style</h2>
+      <p>
+        <%= @band.style %>
+      </p>
+      <h2>Rating</h2>
+      <p>
+        <%= @band.rating %>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <%= simple_form_for [@event] do |f| %>
+      <div><%= f.input :date %></div>
+      <div><%= f.input :price %></div>
+      <div><%= f.input :band_id, collection: Band.all %></div>
+      <div><%= f.input :concert_hall_id, collection: ConcertHall.all %></div>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

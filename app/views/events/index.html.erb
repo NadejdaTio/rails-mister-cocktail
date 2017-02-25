@@ -1,0 +1,31 @@
+<h1>Events</h1>
+
+  <div class="row">
+    <% @events.each do |event| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card-category"><%= event.date %></div>
+        <div class="card-description">
+          <h2>Info</h2>
+            <%= event.price %>
+            <% if event.band_id? %>
+              <%= event.band.name %>
+            <% end %>
+            <% if event.concert_hall_id? %>
+              <%= event.concert_hall.name %>
+            <% end %>
+            <br/>
+            <%= link_to 'Show', event %>
+                <%= link_to 'Edit', edit_event_path(event) %>
+                <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <img class="card-user avatar" src="user.jpg">
+          <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+      <br/>
+    <%= link_to 'New Event', new_event_path %>
+

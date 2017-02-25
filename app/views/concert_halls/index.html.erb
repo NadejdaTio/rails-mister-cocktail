@@ -1,0 +1,22 @@
+<h1>Salles</h1>
+  <div class="row">
+    <% @concert_halls.each do |hall| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card-category"><h2><%= hall.name %></h2></div>
+        <div class="card-description">
+            <%= hall.address %>
+            <br/>
+            <%= link_to 'Voir', hall %>
+            <%= link_to 'Modifier', edit_concert_hall_path(hall) %>
+            <%= link_to 'Supprimer', hall, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <img class="card-user avatar" src="user.jpg">
+          <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+      <br/>
+    <%= link_to 'Ajouter une salle', new_concert_hall_path %>

@@ -25,29 +25,22 @@ class BandsController < ApplicationController
   # POST /bands.json
   def create
     @band = Band.new(band_params)
-
-    respond_to do |format|
-      if @band.save
-        format.html { redirect_to @band, notice: 'Band was successfully created.' }
-        format.json { render :show, status: :created, location: @band }
-      else
-        format.html { render :new }
-        format.json { render json: @band.errors, status: :unprocessable_entity }
-      end
+    if @band.save
+      redirect_to band_path(@band)
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /bands/1
   # PATCH/PUT /bands/1.json
   def update
-    respond_to do |format|
-      if @band.update(band_params)
-        format.html { redirect_to @band, notice: 'Band was successfully updated.' }
-        format.json { render :show, status: :ok, location: @band }
-      else
-        format.html { render :edit }
-        format.json { render json: @band.errors, status: :unprocessable_entity }
-      end
+    @band.update(band_params)
+    @band.save
+    if @band.save
+      redirect_to band_path(@band)
+    else
+      render :new
     end
   end
 

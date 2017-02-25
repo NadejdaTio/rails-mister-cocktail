@@ -1,0 +1,9 @@
+<h2><%= @concert_hall.name %></h2>
+
+<p>
+  <strong>Style:</strong>
+  <%= @concert_hall.address %>
+</p>
+
+<%= link_to 'Edit', edit_concert_hall_path(@concert_hall) %> |
+<%= link_to 'Back', concert_halls_path %>
