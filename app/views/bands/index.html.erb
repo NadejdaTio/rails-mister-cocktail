@@ -1,4 +1,4 @@
-<h1>Portraits</h1>
+<h1>Groupes</h1>
 
   <div class="row">
     <% @bands.each do |band| %>
@@ -6,20 +6,11 @@
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
         <div class="card-category"><h2><%= band.name %></h2></div>
         <div class="card-description">
-            <%= band.style %>
-            <br/>
-            <%= band.description %>
-            <br/>
-            <%= band.rating %>
-            <br/>
-            <%= band.url %>
-            <br/>
+            <p>Style: <%= band.style %> --- Rating: <%= band.rating %></p>
             <%= link_to 'Show', band %>
             <%= link_to 'Edit', edit_band_path(band) %>
             <%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
-        <img class="card-user avatar" src="user.jpg">
-          <a class="card-link" href="#" ></a>
       </div>
     </div>
     <% end %>

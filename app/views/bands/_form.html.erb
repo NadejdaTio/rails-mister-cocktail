@@ -1,12 +1,15 @@
  <div class="row">
+  <%= simple_form_for [@band] do |f| %>
   <div class="col-xs-12 col-sm-6">
-    <%= simple_form_for [@band] do |f| %>
       <div><%= f.input :name %></div>
       <div><%= f.input :style, collection: Band::STYLES, prompt: "Select" %></div>
       <div><%= f.input :description %></div>
       <div><%= f.input :rating, collection: (0..5)%></div>
       <div><%= f.input :url %></div>
       <%= f.submit %>
-    <% end %>
   </div>
+  <div class="col-xs-12 col-sm-6">
+    <div><%= f.input :photo, as: :attachinary %></div>
+  </div>
+    <% end %>
 </div>

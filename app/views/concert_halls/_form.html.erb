@@ -1,9 +1,13 @@
  <div class="row">
+  <%= simple_form_for [@concert_hall] do |f| %>
   <div class="col-xs-12 col-sm-6">
-    <%= simple_form_for [@concert_hall] do |f| %>
+      <div><%= f.input :photo, as: :attachinary %></div>
       <div><%= f.input :name %></div>
       <div><%= f.input :address%></div>
       <%= f.submit %>
-    <% end %>
   </div>
+  <div class="col-xs-12 col-sm-6">
+    <div><%= f.input :photo, as: :attachinary %></div>
+  </div>
+    <% end %>
 </div>

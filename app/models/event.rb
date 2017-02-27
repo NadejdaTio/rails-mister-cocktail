@@ -4,4 +4,6 @@ class Event < ApplicationRecord
 
   validates :date, presence: true
   validates :price, numericality: { only_integer: true }
+
+  has_attachment :photo
 end
